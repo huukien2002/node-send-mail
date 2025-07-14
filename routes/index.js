@@ -16,12 +16,12 @@ const transporter = nodemailer.createTransport({
 async function sendEmail() {
   const mailOptions = {
     from: "lehuukien270702@gmail.com",
-    to: "kienlh@mumesoft.vn",
-    subject: "📝 Đừng quên viết nhật ký hôm nay!",
+    to: "huongthuy0814@gmail.com",
+    subject: "📝 Dưa Hấu ơi, đừng quên viết nhật ký hôm nay nhé! 🍉",
     html: `
     <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
-      <p>🕒 Nhắc nhẹ: Hôm nay bạn cần viết nhật ký nhé!</p>
-      <p>Ghi lại vài dòng để lưu giữ cảm xúc và suy nghĩ trong ngày.</p>
+      <p>🍉 <strong>Dưa Hấu ơi</strong>, nhắc nhẹ là hôm nay bạn cần viết nhật ký nha!</p>
+      <p>Ghi lại vài dòng để lưu giữ cảm xúc và suy nghĩ trong ngày ✍️</p>
       <p>--<br/>Trợ lý nhắc nhở 🤖</p>
     </div>
   `,
@@ -51,7 +51,7 @@ router.get("/send-mail", async function (req, res) {
 });
 
 cron.schedule(
-  "* * * * *",
+  "0 20 * * *",
   () => {
     console.log("⏰ Running daily email job at 11:00 AM");
     sendEmail();
