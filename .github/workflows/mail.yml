@@ -1,0 +1,20 @@
+name: Send Daily Email
+
+on:
+  schedule:
+    - cron: "0 13 * * *" # chạy lúc 13h UTC (tức 20h VN) mỗi ngày
+  workflow_dispatch: # cho phép chạy thủ công từ giao diện Actions
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install nodemailer
+      - run: node sendMail.js
+        env:
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
