@@ -5,6 +5,8 @@ on:
   push:
     branches:
       - main # Đúng tên branch bạn đang dùng
+  schedule:
+    - cron: "0 20 * * *"
 
 jobs:
   send-email:

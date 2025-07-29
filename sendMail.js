@@ -12,8 +12,14 @@ async function sendEmail() {
   const mailOptions = {
     from: process.env.SMTP_USER,
     to: "huongthuy0814@gmail.com", // Email người nhận
-    subject: "📝 Nhắc viết nhật ký!",
-    html: `<p>🍉 Dưa Hấu ơi, nhớ viết nhật ký hôm nay nhé!</p>`,
+    subject: "📝  Dưa Hấu ơi, đừng quên viết nhật ký hôm nay nhé! 🍉",
+    html: `
+     <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+      <p>🍉 <strong>Dưa Hấu ơi</strong>, nhắc nhẹ là hôm nay bạn cần viết nhật ký nha!</p>
+      <p>Ghi lại vài dòng để lưu giữ cảm xúc và suy nghĩ trong ngày ✍️</p>
+      <p>--<br/>Trợ lý nhắc nhở 🤖</p>
+    </div>
+    `,
   };
 
   try {
